@@ -1,0 +1,444 @@
+/* ─────────────────────────────────────────────
+   CueLoop Landing Page
+   Editorial minimal · Warm · Confident
+   ───────────────────────────────────────────── */
+
+:root {
+    --primary: #c45a3c;
+    --accent: #e0785e;
+    --bg: #faf6f4;
+    --border: #ede6e2;
+    --text-secondary: #7a6e68;
+    --text: #201a17;
+    --dark-bg: #161210;
+    --dark-surface: #1e1a17;
+    --dark-text: #f0f0f0;
+    --dark-secondary: #888888;
+
+    --font-heading: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+    --content-width: 900px;
+    --text-width: 600px;
+}
+
+
+/* ─── Reset ─── */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+::selection {
+    background: rgba(196, 90, 60, 0.15);
+    color: var(--text);
+}
+
+
+/* ─── Utilities ─── */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* ─── Hero Section ─── */
+
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wordmark {
+    max-width: 560px;
+    margin-bottom: 40px;
+}
+
+.hero-headline {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 48px);
+    letter-spacing: -0.5px;
+    line-height: 1.12;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+.hero-subhead {
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: var(--text-width);
+    margin-bottom: 40px;
+}
+
+
+/* ─── Email Form ─── */
+
+.email-form {
+    width: 100%;
+    max-width: 480px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.form-row input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 18px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text);
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-row input[type="email"]::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.form-row input[type="email"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(196, 90, 60, 0.08);
+}
+
+.form-row button {
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.form-row button:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+}
+
+.form-row button:active {
+    transform: translateY(0);
+}
+
+.form-row button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.form-row button:disabled {
+    opacity: 0.7;
+    cursor: default;
+    transform: none;
+}
+
+.form-message {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 21px;
+}
+
+.form-message.success {
+    color: #2d7a4f;
+}
+
+.form-message.error {
+    color: var(--primary);
+}
+
+/* Success state — hide form, show message */
+.email-form.submitted .form-row {
+    display: none;
+}
+
+.email-form.submitted .form-message {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    animation: messageReveal 0.4s ease;
+}
+
+/* Dark variant for footer form */
+.email-form--dark .form-row input[type="email"] {
+    background: var(--dark-surface);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--dark-text);
+}
+
+.email-form--dark .form-row input[type="email"]::placeholder {
+    color: var(--dark-secondary);
+    opacity: 0.8;
+}
+
+.email-form--dark .form-row input[type="email"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(224, 120, 94, 0.12);
+}
+
+.email-form--dark.submitted .form-message {
+    color: var(--dark-text);
+}
+
+
+/* ─── Problem & Contrarian Sections ─── */
+
+.problem,
+.contrarian {
+    padding: 72px 0;
+}
+
+.section-content {
+    max-width: var(--text-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-content h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(24px, 3vw, 28px);
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Thin separator between content sections */
+.problem {
+    position: relative;
+}
+
+.problem::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: var(--border);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* ─── Bottom CTA (Dark Footer) ─── */
+
+.bottom-cta {
+    background: var(--dark-bg);
+    padding: 96px 0 72px;
+    text-align: center;
+}
+
+.bottom-cta ::selection {
+    background: rgba(224, 120, 94, 0.25);
+    color: var(--dark-text);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-cta h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(26px, 3.5vw, 32px);
+    color: var(--dark-text);
+    margin-bottom: 32px;
+    letter-spacing: -0.3px;
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--dark-secondary);
+}
+
+.footer-mark {
+    width: 40px;
+    opacity: 0.25;
+    margin-top: 56px;
+    transition: opacity 0.3s ease;
+    filter: invert(1);
+}
+
+.footer-mark:hover {
+    opacity: 0.4;
+}
+
+
+/* ─── Animations ─── */
+
+/* Hero staggered entrance */
+.hero-animate {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroReveal 0.7s ease forwards;
+    animation-delay: calc(var(--delay, 0) * 150ms + 200ms);
+}
+
+@keyframes heroReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll-triggered reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Success message fade-in */
+@keyframes messageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero-animate {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    @keyframes messageReveal {
+        from { opacity: 1; transform: none; }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 72px 0 60px;
+    }
+
+    .wordmark {
+        max-width: 320px;
+        margin-bottom: 28px;
+    }
+
+    .hero-subhead {
+        margin-bottom: 32px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row button {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .problem,
+    .contrarian {
+        padding: 56px 0;
+    }
+
+    .bottom-cta {
+        padding: 72px 0 56px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 56px 0 48px;
+    }
+
+    .wordmark {
+        max-width: 280px;
+        margin-bottom: 24px;
+    }
+}

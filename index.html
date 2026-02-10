@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CueLoop - Real-time AI coaching for user interviews</title>
+    <meta name="description" content="Better questions. Better products. Real-time AI coaching for your next user interview - like having a world-class researcher in your ear.">
+    <meta property="og:title" content="CueLoop - Better questions. Better products.">
+    <meta property="og:description" content="Real-time AI coaching for your next user interview - like having a world-class researcher in your ear.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cueloop.app">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main>
+        <section class="hero" aria-label="Introduction">
+            <div class="container">
+                <div class="hero-content">
+                    <img src="assets/wordmark-final.png" alt="CueLoop" class="wordmark hero-animate" style="--delay: 0" width="2836" height="700">
+                    <h1 class="hero-headline hero-animate" style="--delay: 1">Better questions.<br>Better products.</h1>
+                    <p class="hero-subhead hero-animate" style="--delay: 2">Real-time AI coaching for your next user interview - like having a world-class researcher in your ear.</p>
+                    <form class="email-form hero-animate" style="--delay: 3" id="hero-form" aria-label="Join waitlist">
+                        <label for="hero-email" class="sr-only">Email address</label>
+                        <div class="form-row">
+                            <input type="email" id="hero-email" name="email" placeholder="you@company.com" required autocomplete="email">
+                            <button type="submit">Join the waitlist</button>
+                        </div>
+                        <div class="form-message" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem reveal" aria-label="The problem">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Most interviews are broken - and nobody tells you.</h2>
+                    <p>Leading questions. Missed signals. Walking away with data that confirms what you already believed. The cost isn't a bad interview - it's months building the wrong thing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contrarian reveal" aria-label="Our approach">
+            <div class="container">
+                <div class="section-content">
+                    <h2>AI should coach the interviewer, not replace them.</h2>
+                    <p>Founders learn by doing. The subtle hesitation, the thing they almost said, the insight that shifts your roadmap - you only catch these when you're in the room. CueLoop makes sure you don't miss them.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-cta" aria-label="Sign up">
+        <div class="container">
+            <div class="footer-content reveal">
+                <h2>Be first to try CueLoop.</h2>
+                <form class="email-form email-form--dark" id="footer-form" aria-label="Join waitlist">
+                    <label for="footer-email" class="sr-only">Email address</label>
+                    <div class="form-row">
+                        <input type="email" id="footer-email" name="email" placeholder="you@company.com" required autocomplete="email">
+                        <button type="submit">Join the waitlist</button>
+                    </div>
+                    <div class="form-message" aria-live="polite"></div>
+                </form>
+                <p class="footer-note">Mac app. Early access coming soon.</p>
+                <img src="assets/mark-finalist-1-transparent.png" alt="" class="footer-mark" width="1542" height="1016" aria-hidden="true">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
